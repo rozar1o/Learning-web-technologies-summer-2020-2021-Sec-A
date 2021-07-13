@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title>Add Product</title>
+</head>
+<body>
+	<form method="post" action="../controller/addPrd.php">
+		<fieldset style="width: 300px">
+			<legend>Add Product</legend>
+			<table>
+				<tr>
+					<td>
+						Name
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="text" name="name" value="">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Buying Price
+					</td>	
+				</tr>
+				<tr>
+					<td>
+						<input type="number" name="bprice" value="">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Selling Price
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="number" name="sprice" value="">
+					</td>
+				</tr>
+				
+			</table>
+			<hr width="100%" align="left">
+			<input type="checkbox" name="check">
+			<label for="check">Display</label>
+			<hr width="100%" align="left">
+			<input type="submit" name="submit" value="SAVE">
+		</fieldset>
+	</form>
+
+</body>
+</html>
