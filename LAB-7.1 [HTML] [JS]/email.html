@@ -1,0 +1,23 @@
+<html>
+<head> </head>
+<body>
+<form onsubmit="return muFun()">
+Email: <input type="text" id="Email" value="">
+<span id="Message"> </span>
+</br>
+<input type="submit" value="Submit"></input>
+</form>
+
+<script>
+  "use strict"
+function myFun(){
+  
+ let a= document.getElementById("Email").value;
+   if(a==""){
+   document.getElementById("Message").innerHTML="Can not empty";
+   return false;
+   }
+   
+     
+}
+</script>
