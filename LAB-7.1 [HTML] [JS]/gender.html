@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gender</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Gender</legend>
+        <form action="" onsubmit="return Gender()">
+            <input type="radio" name="male" id="male">Male
+            <input type="radio" name="female" id="female">Female
+            <input type="radio" name="other" id="other">Other <br>
+            <input type="submit" value="Submit">
+        </form>
+    </fieldset>
+</body>
+
+</html>
+<script>
+    function Gender() {
+        if (document.getElementById("male").checked || document.getElementById("female").checked || document.getElementById("other").checked) {
+            return true;
+        } else {
+            alert("At least one of them has to be selected");
+            return false;
+        }
+    }
+</script>

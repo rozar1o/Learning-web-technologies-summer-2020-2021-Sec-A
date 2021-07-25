@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date of Birth</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Date of Birth</legend>
+        <form action="" onsubmit="return dob()">
+            dd mm yyyy <br>
+            <input type="text" name="dd" id="dd"> / <input type="text" name="mm" id="mm"> / <input type="text" name="yyyy" id="yyyy">
+            <br>
+            <hr>
+            <input type="submit" value="Submit">
+        </form>
+    </fieldset>
+
+</body>
+
+</html>
+<script>
+    function dob() {
+        if (document.getElementById("dd").value == "" || document.getElementById("mm").value == "" || document.getElementById("yyyy").value == "") {
+            alert("Cannot be empty");
+            return false;
+        } else if (document.getElementById("dd").value <= 0 || document.getElementById("dd").value > 31) {
+            alert("Must be a valid Date");
+            return false;
+        } else if (document.getElementById("mm").value <= 0 || document.getElementById("mm").value > 12) {
+            alert("Must be a valid Month");
+            return false;
+        } else if (document.getElementById("yyyy").value < 1900 || document.getElementById("yyyy").value > 2016) {
+            alert("Must be a valid year");
+            return false;
+        }
+    }
+</script>
