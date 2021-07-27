@@ -1,128 +1,160 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Personal Info</title>
-    </head>
-    <body>
+<head>
+	<title>Personal Profile</title>
+</head>
+<body>
+	
+	<form name="myForm" onsubmit="return(validate());">
+	    <table border="1">
+	        <th colspan="3">
+	            Personal Profile
+	        </th>
+	        <tr>
+	            <td>
+	              <b>Name</b>
+	            </td>
+	            <td>
+	              	<input id="name" type="text" name="name" value="">
+	            </td>
+	            <td>
+	               
+	            </td>
+            </tr>
+            <tr>
+	            <td>
+	              <b>Email</b>
+	            </td>
+	            <td>
+	              	<input id="email" type="email" name="mail" value="">
+	              	<button title="hint: sample@example.com" style="color: blue; font-size: 14px;"><b>i</b></button>
+	            </td>
+	            <td>
+	               
+	            </td>
+            </tr>
+            <tr>
+	            <td>
+	              <b>Gender</b>
+	            </td>
+	            <td>
+	              <input id="gender" type="radio" name="gender" value="male"> Male
+			      <input id="gender" type="radio" name="gender" value="female"> Female
+			      <input id="gender" type="radio" name="gender" value="other"> Other 
+	            </td>
+	            <td>
 
-        <script >
-            function validation()
-            {
-                let name=document.getElementById("name");
-                if(name.value.trim()=="")
-                {
-                    alert("Blank field is not allow");
-                }
-
-                else if(name.value.trim().length<2 || name.value.trim().length>20)
-                {
-                    alert("Character must be 2 to 20");
-                }
-
-                else if(!isNaN(name.value))
-                {
-                    alert("Number is not allow");
-                }
-
-
-                else
-                {
-                    alert("Submit successfully");
-
-                }
-
-                let email=document.getElementById("email").value;
-               
-               var regex=/^([a-zA-Z0-9\._]+)@([a-zA-Z0-9])+.([a-z]+)(.[a-z]+)?$/
-              
-               if(regex.test(email))
-               {
-                 alert("");
-                   return true;
-
-               }
-               else
-               {
-                 alert("Please Enter Vailed Email Id");
-                   return false;
-
-               }
-               
-
-
-
-
-
-            }
-
-        </script>
-
-        <h1>PERSONAL PROFILE</h1>
-        <form onsubmit="validation()">
-            <div>
-                <label>Name:</label>
-                <input id="name" type="text" placeholder="Enter your Name">
-                
-            </div>
-            <br>
+	            </td>
+            </tr>
+            <tr>
+	            <td>
+	              <b>Date of Birth</b>
+	            </td>
+	            <td>
+	             <input id="day" type="number" name="dd" style="width:20px;" value=""> / 
+	             <input id="month" type="number" name="mm" style="width:20px;" value="">	/ 
+	             <input id="year" type="number" name="yyyy" style="width:40px;" value=""> (dd/mm/yyyy)
+	            </td>
+	            <td>
+	               
+	            </td>
+            </tr>
+            <tr>
+	            <td>
+	              <b>Blood Group</b>
+	            </td>
+	            <td>
+	             <select id="bloodGroup" name="bloodGroup" >
+	             <option value=""></option>
+				<option value="A+">A+</option>
+				<option value="A-">A-</option>
+				<option value="B+">B+</option>
+				<option value="B-">B-</option>
+				<option value="O+">O+</option>
+				<option value="O-">O-</option>
+				<option value="AB+">AB+</option>
+				<option value="AB-">AB-</option>
+			</select>
+	            </td>
+	            <td>
+	               
+	            </td>
+            </tr>
             
-
-            <div>
-                <label>Enail:</label>
-                <input id="email" type="text" placeholder="abc@gmail.com">
-                
-            </div>
-            <br>
-
-            <div>
-                <label>Gender:</label>
-                <input name="gender" type="radio" value="">Male
-                <input name="gender" type="radio" value="">Female
-                <input named="gender" type="radio" value="">Other
-            </div>
-            <br>
-            <div>
-                <label>Date Of Birth</label>
-                <input type="text" size="2px">/
-                <input type="text" size="2px">/
-                <input type="text" size="2px">
-                <label>(dd/mm/year)</label>
-                
-            </div>
-            <br>
-
-            <div>
-                <label>Blood Group</label>
-                <select name="bg">
-                    <option value="">A+</option>
-                    <option value="">B+</option>
-                    <option value="">AB+</option>
-                </select>
-            </div>
-            <br>
-
-            <div>
-                <label>Degree</label>
-                <input type="checkbox" name="" value=""> SSC
-                <input type="checkbox" name="" value=""> HSC
-                <input type="checkbox" name="" value=""> BSc
-                <input type="checkbox" name="" value=""> MSc
-            </div>
-            <br>
-            <div>
-                <label>Photo</label>
-                <input type="file" name="photo">
-            </div>
-            <br>
-            <button>submit</button>
-            <button>Reset</button>
+                                                <tr>
+	            <td>
+	              <b>Degree</b>
+	            </td>
+	            <td>
+	            <input type="checkbox" name="degree" value="SSC"> SSC
+			<input type="checkbox" name="degree" value="HSC"> HSC
+			<input type="checkbox" name="degree" value="BSc"> BSc
+	            </td>
+	            <td>
+	               
+	            </td>
+            </tr> 
+            <tr>
+                <td colspan="3" align="right">
+                     <input type="submit" name="submit" value="Submit">
+                     <input type="reset" name="reset" value="Reset">
+                </td>
+            </tr>
             
-
-
-
-
-
-
-        </form>
-    </body>
+	    </table>
+	</form>
+	
+	<script>
+		function validate(){
+            
+			let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let day = document.getElementById('day').value;
+			let month =document.getElementById('month').value;
+			let year = document.getElementById('year').value;
+            let bloodGroup = document.getElementById('bloodGroup').value;
+            let gender = document.myForm.gender.value;
+            //Name Validation
+			 if(name == ''){
+				alert('Name: Null value');
+			}
+            else if(name.length<2 && (name>='A' && name<='Z' || name>='a' && name<='z')){
+                    alert('Name: Contains at least two words');
+                    }
+            else if(name >='0'  && name<='9' || name=='~' || name=='!' || name=='@' || name =='#' || name=='$' || name=='%' || name=='^' || name=='&' || name=='*' || name=='()'|| name=='/' ){
+                    alert('Name: Can contain a-zor A-Zor dot(.) or dash(-)');
+                    }
+            else if(name>='0' && name<='9'){
+                    alert('Name: Must be starts with letter');
+                    }
+            //Email Validation
+            if(email  != ""){
+				document.getElementById('head1').innerHTML = email;
+			}else{
+				alert('Email: Null value');
+			} 
+            //Gender Validation
+           if(gender == ""){
+                 alert("Gender: At least one of them has to be selected");
+                    return false;
+			} 
+            //Date of Birth Validation
+            if(day == "" || month == "" || year == ""){
+				alert("Date of Birth: Cannot be empty");
+				return false;
+			}
+			if((day > 0 && day <= 31) || (month >= 1 && month <= 12) 
+			|| (year >= 1900 && year <= 2016)){
+				alert("Date of Birth: Must be a valid number (dd: 0-31, mm: 1-12, yyyy: 1900-2016)");
+				return false;
+			} 
+            //Blood Group Validation
+            if(bloodGroup == ""){
+                alert("Please select at least one of the options.");
+				return false;
+			}
+            //Degree Validation
+		}
+	</script>
+</body>
 </html>
