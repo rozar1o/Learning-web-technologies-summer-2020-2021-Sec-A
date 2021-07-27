@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Personal Info</title>
+    </head>
+    <body>
+
+        <script >
+            function validation()
+            {
+                let name=document.getElementById("name");
+                if(name.value.trim()=="")
+                {
+                    alert("Blank field is not allow");
+                }
+
+                else if(name.value.trim().length<2 || name.value.trim().length>20)
+                {
+                    alert("Character must be 2 to 20");
+                }
+
+                else if(!isNaN(name.value))
+                {
+                    alert("Number is not allow");
+                }
+
+
+                else
+                {
+                    alert("Submit successfully");
+
+                }
+
+                let email=document.getElementById("email").value;
+               
+               var regex=/^([a-zA-Z0-9\._]+)@([a-zA-Z0-9])+.([a-z]+)(.[a-z]+)?$/
+              
+               if(regex.test(email))
+               {
+                 alert("");
+                   return true;
+
+               }
+               else
+               {
+                 alert("Please Enter Vailed Email Id");
+                   return false;
+
+               }
+               
+
+
+
+
+
+            }
+
+        </script>
+
+        <h1>PERSONAL PROFILE</h1>
+        <form onsubmit="validation()">
+            <div>
+                <label>Name:</label>
+                <input id="name" type="text" placeholder="Enter your Name">
+                
+            </div>
+            <br>
+            
+
+            <div>
+                <label>Enail:</label>
+                <input id="email" type="text" placeholder="abc@gmail.com">
+                
+            </div>
+            <br>
+
+            <div>
+                <label>Gender:</label>
+                <input name="gender" type="radio" value="">Male
+                <input name="gender" type="radio" value="">Female
+                <input named="gender" type="radio" value="">Other
+            </div>
+            <br>
+            <div>
+                <label>Date Of Birth</label>
+                <input type="text" size="2px">/
+                <input type="text" size="2px">/
+                <input type="text" size="2px">
+                <label>(dd/mm/year)</label>
+                
+            </div>
+            <br>
+
+            <div>
+                <label>Blood Group</label>
+                <select name="bg">
+                    <option value="">A+</option>
+                    <option value="">B+</option>
+                    <option value="">AB+</option>
+                </select>
+            </div>
+            <br>
+
+            <div>
+                <label>Degree</label>
+                <input type="checkbox" name="" value=""> SSC
+                <input type="checkbox" name="" value=""> HSC
+                <input type="checkbox" name="" value=""> BSc
+                <input type="checkbox" name="" value=""> MSc
+            </div>
+            <br>
+            <div>
+                <label>Photo</label>
+                <input type="file" name="photo">
+            </div>
+            <br>
+            <button>submit</button>
+            <button>Reset</button>
+            
+
+
+
+
+
+
+        </form>
+    </body>
+</html>
